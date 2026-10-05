@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Loop</title>
+</head>
+<body>
+    <button onclick="printNumbers()" class="bg-blue-600 text-white py-2 px-4 rounded-lg">Print 1 to 10</button>
+    <button onclick="printReverseNumbers()" class="bg-blue-600 text-white py-2 px-4 rounded-lg">Print 10 to 1</button>
+    <button onclick="printSumOfValue()" class="bg-blue-600 text-white py-2 px-4 rounded-lg">SumOFValue</button>
+    <button onclick="calculateEvenNumber()" class="bg-blue-600 text-white py-2 px-4 rounded-lg">how much even number </button>
+    <button onclick="calculateNoOfEvenNumberOddNumber()" class="bg-blue-600 text-white py-2 px-4 rounded-lg">number of even number and odd number</button>
+    <button onclick="temperatureConverter()" class="bg-blue-600 text-white py-2 px-4 rounded-lg">temperatureConverter</button>
+    
+<script>
+    var printNumbers = () =>{
+        for (let i = 1; i <= 10; i++) {
+            console.log(i);
+        }
+    }
+    //-------------------------------------------------
+    var printReverseNumbers = () =>{
+        for (let i = 10; i >= 1; i--){
+            console.log(i);
+        }
+    }
+    const printSumOfValue = () =>{
+        var number = parseInt(prompt("Enter The number"));
+        var sum = 0;
+
+        for(var i = 1; i <= number; i++){
+            sum = sum + i;
+        }
+        console.log(sum);
+
+    }
+    let calculateEvenNumber = () =>{
+        var number = parseInt(prompt("Enter the number"));
+
+        for(var i = 1; i <= number; i++){
+            if(i % 2 == 0){
+                console.log(i);
+            }
+        }
+    }
+    let calculateNoOfEvenNumberOddNumber = () =>{
+        var number = parseInt(prompt("Enter the number"));
+        var TotalEvenNumber = 0;
+        var TotalOddNumber = 0;
+
+        for( i = 1; i <= number; i++){
+            if(i % 2 == 0){
+                TotalEvenNumber = TotalEvenNumber + i;
+            } else{
+                TotalOddNumber = TotalOddNumber + i;
+            }
+        }
+        console.log("TotalEvenNumber is: ",TotalEvenNumber );
+        console.log("TotalOddNumber is: ",TotalOddNumber );
+    }
+
+    var temperatureConverter = () =>{
+        var from = prompt("Enter the from value(c, f, k)");
+        var to = prompt("Enter the to value(c, f, k)");
+        var number = prompt("Enter your number");
+
+
+        if(from == 'c' && to == 'f'){
+           result = (number * 9 / 5) + 32;
+        } else if(from == 'c' && to == 'k'){
+           result = number + 273.15;
+        } else if(from == 'f' && to == 'c'){
+           result = (number - 32) * 5 / 9;
+        } else if(from == 'f' && to == 'k'){
+           result = ((number - 32) * 5 / 9) + 273.15;
+
+        } else if(from == 'k' && to == 'c'){
+           result = number - 273.15;
+
+        } else if(from == 'k' && to == 'f'){
+           result = ((number - 273.15) * 9 / 5) + 32;
+
+        } else {
+            console.log("Invalid value");
+        }
+        console.log(" converted value is: ", result);
+    }
+
+</script>
+    
+</body>
+</html>

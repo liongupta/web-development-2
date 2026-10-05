@@ -1,0 +1,17 @@
+.headerclass{
+    height: 100px;
+    text-align: right;
+    background-color: antiquewhite;
+}
+.headerclass a{
+    text-decoration: none;
+}
+
+/*---------about section-------------------- */
+.about-us-section{
+    height: 500px;
+    background-color: beige;
+}
+.about-inner-section h2{
+    text-align: center;
+}
